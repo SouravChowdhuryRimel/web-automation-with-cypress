@@ -1,0 +1,44 @@
+{
+  "name": "cypress-cucumber-boilerplate",
+  "version": "2.2.0",
+  "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress just cloning the project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open --e2e --browser chrome",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*",
+    "cypress:execution-tags": "cypress run --env tags=@mobile",
+    "allure:execution-headless": "cypress run --env allure=true",
+    "allure:execution-headed": "cypress open --e2e --browser chrome --env allure=true",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "cucumber",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "cypress": "^12.17.4",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^2.0.1",
+    "esbuild": "^0.25.0",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  },
+  "dependencies": {
+    "allure": "^0.0.0",
+    "cucumber": "^6.0.7",
+    "function-bind": "^1.1.2",
+    "has": "^1.0.4",
+    "object-inspect": "^1.13.0",
+    "process": "^0.11.10",
+    "querystringify": "^2.2.0",
+    "requires-port": "^1.0.0",
+    "semver": "^7.5.4",
+    "tough-cookie": "^4.1.3",
+    "url-parse": "^1.5.10"
+  }
+}
